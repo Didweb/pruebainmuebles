@@ -1,7 +1,7 @@
 nelmio_api_doc:
     documentation:
         info:
-            title: Api Core V1 RaspinuOffice
+            title: Api Inmuebles prueba Eduard Pinuaga
             description: Documentation for the correct use of the api
             version: 1.0.0
     areas: # to filter documented areas

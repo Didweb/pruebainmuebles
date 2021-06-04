@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Doctrine\Repository;
+namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Repository;
 
 
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;

@@ -12,20 +12,20 @@ doctrine:
 
         types:
             # Property
-            property_id:
-                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyIdType
-            property_title:
-                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyTitleType
-            propert_description:
-                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyDescriptionType
+#            property_id:
+#                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyIdType
+#            property_title:
+#                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyTitleType
+#            propert_description:
+#                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyDescriptionType
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            property:
-                mapping: true
-                type: yml
-                dir: '%kernel.project_dir%/src/Backoffice/Commercial/Property/Infrastructure/Persistence/Doctrine/Mapping'
-                prefix: 'ApiInmuebles\Backoffice\Commercial\Property\Domain'
-                alias: property
+#            property:
+#                mapping: true
+#                type: yml
+#                dir: '%kernel.project_dir%/src/Backoffice/Commercial/Property/Infrastructure/Persistence/Doctrine/Mapping'
+#                prefix: 'ApiInmuebles\Backoffice\Commercial\Property\Domain'
+#                alias: property

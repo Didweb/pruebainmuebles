@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Doctrine\Type;
+namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type;
 
 
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyDescription;
@@ -10,7 +10,7 @@ use Doctrine\DBAL\Platforms\AbstractPlatform;
 
 final class PropertyDescriptionType
 {
-    public function convertToDatabaseValue($value, AbstractPlatform $platform): ?string
+    public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
         if (!$value) {
             return null;
@@ -18,7 +18,7 @@ final class PropertyDescriptionType
         return (string)$value;
     }
 
-    public function convertToPHPValue($value, AbstractPlatform $platform): ?PropertyDescription
+    public function convertToPHPValue($value, AbstractPlatform $platform)
     {
         if (!$value) {
             return null;

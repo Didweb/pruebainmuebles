@@ -28,47 +28,6 @@ final class CreatePropertyPostController
      * Create a Property
      *
      * @Route("/create/property", methods={"POST"}, name="api_property_create")
-     * @OA\Tag(
-     *     name="Property",
-     *     description="Operations about Property"
-     * )
-     *     @OA\RequestBody(
-     *        required = true,
-     *        description = "Data packet for create Property",
-     *        @OA\JsonContent(
-     *             type="object",
-     *             @OA\Property(
-     *                property="property",
-     *                type="array",
-     *                example={{
-     *                  "id": "b026b3f4-be48-11eb-8529-0242ac130011",
-     *                  "title": "Title Property",
-     *                  "description": "Description Property"
-     *                }},
-     *                @OA\Items(
-     *                      @OA\Property(
-     *                         property="id",
-     *                         type="string",
-     *                         example=""
-     *                      ),
-     *                      @OA\Property(
-     *                         property="title",
-     *                         type="string",
-     *                         example=""
-     *                      )
-     *                      @OA\Property(
-     *                         property="description",
-     *                         type="string",
-     *                         example=""
-     *                      ),
-     *                ),
-     *             ),
-     *        ),
-     * ),
-     * @OA\Response(
-     *        response="200",
-     *        description="Success: Property created",
-     *     )
      **/
     public function __invoke(Request $request): Response
     {

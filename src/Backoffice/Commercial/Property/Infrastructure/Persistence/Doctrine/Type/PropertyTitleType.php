@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Doctrine\Type;
+namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type;
 
 
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyId;
+use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyTitle;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 
-final class PropertyIdType
+final class PropertyTitleType
 {
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
@@ -24,6 +24,6 @@ final class PropertyIdType
             return null;
         }
 
-        return PropertyId::create($value);
+        return new PropertyTitle($value);
     }
 }
