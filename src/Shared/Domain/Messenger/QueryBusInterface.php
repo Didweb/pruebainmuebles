@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Shared\Domain\Messenger;
+namespace ApiInmuebles\Shared\Domain\Messenger;
 
-use RaspinuOffice\Shared\Domain\Messenger\Query\Query;
+use ApiInmuebles\Shared\Domain\Messenger\Query\Query;
 
 interface QueryBusInterface
 {

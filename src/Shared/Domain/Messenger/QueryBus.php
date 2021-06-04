@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Shared\Domain\Messenger;
+namespace ApiInmuebles\Shared\Domain\Messenger;
 
-use RaspinuOffice\Shared\Domain\Messenger\Query\Query;
+use ApiInmuebles\Shared\Domain\Messenger\Query\Query;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Messenger\Stamp\HandledStamp;

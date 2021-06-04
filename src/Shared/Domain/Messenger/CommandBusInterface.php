@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Shared\Domain\Messenger;
+namespace ApiInmuebles\Shared\Domain\Messenger;
 
 
-use RaspinuOffice\Shared\Domain\Messenger\Command\Command;
+use ApiInmuebles\Shared\Domain\Messenger\Command\Command;
 
 interface CommandBusInterface
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Shared\Domain\Messenger;
+namespace ApiInmuebles\Shared\Domain\Messenger;
 
 
 
-use RaspinuOffice\Shared\Domain\Messenger\Command\Command;
+use ApiInmuebles\Shared\Domain\Messenger\Command\Command;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Throwable;

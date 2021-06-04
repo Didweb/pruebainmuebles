@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Shared\Domain\ValueObjects;
+namespace ApiInmuebles\Shared\Domain\ValueObjects;
 
 
-use RaspinuOffice\Shared\Domain\ValueObjects\Exception\UuidValueException;
+use ApiInmuebles\Shared\Domain\ValueObjects\Exception\UuidValueException;
 
 class Uuid
 {

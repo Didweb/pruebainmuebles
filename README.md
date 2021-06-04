@@ -1,37 +1,66 @@
-# Raspinu Office
+# Prueba
 
 ---
 
-#### Aplicaciones:
-- **Api**: Controladores Api.
-- **Backoffice**: Logica de negocio recursos.
+### Requerimientos:
+
+#### REST API sin autenticación
+Tenemos una aplicación para gestionar tours virtuales. Las agencias inmobiliarias que
+gestionan pisos en alquiler quieren hacer un tour virtual cada vez que el inmueble cambia de
+inquilinos para llevar la trazabilidad visual del estado de ese inmueble en cada transacción.
+
+La tarea consiste en implementar una REST API que sea capaz de dar de alta y modificar
+inmuebles y los tours virtuales asociados al inmueble.
+
+Los endpoints son los siguientes:
+
+
+Añadir inmueble  `/api/property/add`
+
+Modificar inmueble  `/api/property/update`
+
+Añadir tour virtual  `/api/tour/add`
+
+Modificar tour  `/api/tour/update`
+
+
+Las dos entidades tienen estas propiedades...
+
+**Inmueble**
+
+- Id: identificador único del inmueble
+- Título: string
+- Descripción: string
+- Tours: colección de objetos tours
+
+**Tour**
+
+- Id: identificador único del tour
+- Inmueble: objeto inmueble al que pertenece
+- Activo: boolean indicando si el tour està activado o desactivado
+
+---
+---
+## Info del proceso y creación de la prueba:
+
+### Entorno desarrollo
+
+**Docker** con 3 servicios:
+- nginx
+- php
+- mysql
+
+**IDE**: PHPStorm
+
+**SO**: Linux (Debian)
+
 ---
 
-#### Api
+### Aplicación
 
-Documentada con **Nelmio / Swagger**.
-
-Accesible desde : `/api/doc`
-
----
-
-### Requerimientos
-
-Gestión de stock / administrativo de discos de vinilo.
-
-#### Context: Products
-
-Record:
-
-- Los discos `Record`, se componen de una referencia esta puede ser null.
-- `Edition`:  Un mismo título puede tener diferentes ediciones por lo tanto diferentes referencias.
-- `Stock`: Podemos tener varias unidades de una misma referencia `Record/Edition` con la particularidad que cada 
-  unidad de stock puede estar en un estado distinto, existen productos de  segunda mano. 
-  Por lo tanto cada unidad del stock deberá tener un identificador único.
-- El valor de producto (unidad de stock), varia en función de la edición/estado. Por lo tanto el precio 
-  ha de especificarse de forma unitaria en cada unidad de stock.
-
-![Diagrama Products](docs/diagrama_products.png)
+- Symfony 5
+- PHP 7.4
+- Path in local: `http://localhost:8080/`
 
 ---
 

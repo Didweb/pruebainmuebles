@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Api\Ports\Rest;
+namespace ApiInmuebles\Api\Ports\Rest;
 
 
 use Exception;

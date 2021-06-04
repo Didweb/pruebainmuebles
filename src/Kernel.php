@@ -1,6 +1,6 @@
 <?php
 
-namespace RaspinuOffice;
+namespace ApiInmuebles;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;

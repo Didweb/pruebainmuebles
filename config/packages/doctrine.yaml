@@ -11,27 +11,27 @@ doctrine:
         #server_version: '13'
 
         types:
-            gener_id:
-                class: RaspinuOffice\Backoffice\Products\Gener\Infrastructure\Persistence\Doctrine\Type\GenerIdType
-            label_id:
-                class: RaspinuOffice\Backoffice\Products\Label\Infrastructure\Persistence\Doctrine\Type\LabelIdType
-            label_name:
-                class: RaspinuOffice\Backoffice\Products\Label\Infrastructure\Persistence\Doctrine\Type\LabelNameType
+#            gener_id:
+#                class: ApiInmuebles\Backoffice\Products\Gener\Infrastructure\Persistence\Doctrine\Type\GenerIdType
+#            label_id:
+#                class: ApiInmuebles\Backoffice\Products\Label\Infrastructure\Persistence\Doctrine\Type\LabelIdType
+#            label_name:
+#                class: ApiInmuebles\Backoffice\Products\Label\Infrastructure\Persistence\Doctrine\Type\LabelNameType
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            gener:
-                mapping: true
-                type: yml
-                dir: '%kernel.project_dir%/src/Backoffice/Products/Gener/Infrastructure/Persistence/Doctrine/Mapping'
-                prefix: 'RaspinuOffice\Backoffice\Products\Gener\Domain'
-                alias: gener
-
-            label:
-                mapping: true
-                type: yml
-                dir: '%kernel.project_dir%/src/Backoffice/Products/Label/Infrastructure/Persistence/Doctrine/Mapping'
-                prefix: 'RaspinuOffice\Backoffice\Products\Label\Domain'
-                alias: label
+#            gener:
+#                mapping: true
+#                type: yml
+#                dir: '%kernel.project_dir%/src/Backoffice/Products/Gener/Infrastructure/Persistence/Doctrine/Mapping'
+#                prefix: 'ApiInmuebles\Backoffice\Products\Gener\Domain'
+#                alias: gener
+#
+#            label:
+#                mapping: true
+#                type: yml
+#                dir: '%kernel.project_dir%/src/Backoffice/Products/Label/Infrastructure/Persistence/Doctrine/Mapping'
+#                prefix: 'ApiInmuebles\Backoffice\Products\Label\Domain'
+#                alias: label

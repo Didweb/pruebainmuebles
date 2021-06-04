@@ -10,8 +10,8 @@ services:
             - "3308:3306"
         environment:
             MYSQL_ROOT_PASSWORD: 123456
-            MYSQL_DATABASE: raspinuoffice
-        container_name: raspinuoffice_mysql
+            MYSQL_DATABASE: pruebainmuebles
+        container_name: pruebainmuebles_mysql
     nginx:
         image: nginx:alpine
         restart: on-failure
@@ -25,7 +25,7 @@ services:
         ports:
             - "8080:80"
             - "443:443"
-        container_name: raspinuoffice_nginx
+        container_name: pruebainmuebles_nginx
     php:
         build:
             context: .
@@ -36,4 +36,4 @@ services:
         env_file:
             - .env
         user: www-data:www-data
-        container_name: raspinuoffice_php
+        container_name: pruebainmuebles_php

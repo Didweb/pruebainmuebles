@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Shared\Infrastructure\Helper;
+namespace ApiInmuebles\Shared\Infrastructure\Helper;
 
 
 use Faker\Factory;

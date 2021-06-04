@@ -59,8 +59,3 @@ RUN echo "xdebug.start_with_request=trigger" >> /usr/local/etc/php/conf.d/docker
 
 RUN rm "$PHP_INI_DIR/php.ini-production"; \
     mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini";
-
-RUN echo "memory_limit = -1;" >> /usr/local/etc/php/conf.d/php.ini
-RUN echo "max_execution_time = 0;" >> /usr/local/etc/php/conf.d/php.ini
-RUN echo "set_time_limit = -1;" >> /usr/local/etc/php/conf.d/php.ini
-RUN echo "max_input_time = -1;" >> /usr/local/etc/php/conf.d/php.ini

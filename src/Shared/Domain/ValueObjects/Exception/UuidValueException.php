@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Shared\Domain\ValueObjects\Exception;
+namespace ApiInmuebles\Shared\Domain\ValueObjects\Exception;
 
 use Exception;
 

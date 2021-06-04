@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace RaspinuOffice\Shared\Domain\ValueObjects;
+namespace ApiInmuebles\Shared\Domain\ValueObjects;
 
 use InvalidArgumentException;
 
