@@ -60,7 +60,9 @@ Las dos entidades tienen estas propiedades...
 
 - Symfony 5
 - PHP 7.4
-- Path in local: `http://localhost:8080/`
+- Path doc api: `http://localhost:8080/api/doc`
+
+Documentación API mediante: **Nelmio**
 
 ---
 
