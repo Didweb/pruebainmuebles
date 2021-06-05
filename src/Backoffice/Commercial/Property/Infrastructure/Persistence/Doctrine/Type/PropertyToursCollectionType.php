@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type;
 
 
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyId;
+use ApiInmuebles\Shared\Domain\ValueObjects\ToursCollection;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\StringType;
 
-final class PropertyIdType extends StringType
+final class PropertyToursCollectionType extends StringType
 {
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
@@ -25,6 +25,6 @@ final class PropertyIdType extends StringType
             return null;
         }
 
-        return PropertyId::create($value);
+        return new ToursCollection($value);
     }
 }

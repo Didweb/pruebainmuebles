@@ -7,17 +7,31 @@ namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence
 
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\PropertyRepository;
+use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyTitle;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityRepository;
 
 final class DoctrinePropertyRepository implements PropertyRepository
 {
 
+    private EntityManagerInterface $em;
+    private EntityRepository $repository;
+
+    public function __construct(EntityManagerInterface $manager)
+    {
+        $this->em = $manager;
+        /** @var EntityRepository $repository */
+        $repository = $this->em->getRepository(Property::class);
+        $this->repository = $repository;
+    }
     public function save(Property $property): void
     {
-        // TODO: Implement save() method.
+        $this->em->persist($property);
     }
 
     public function update(Property $property): void
     {
         // TODO: Implement update() method.
     }
+
 }

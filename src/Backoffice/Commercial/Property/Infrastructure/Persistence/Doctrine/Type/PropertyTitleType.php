@@ -7,8 +7,9 @@ namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence
 
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyTitle;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
+use Doctrine\DBAL\Types\StringType;
 
-final class PropertyTitleType
+final class PropertyTitleType  extends StringType
 {
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
