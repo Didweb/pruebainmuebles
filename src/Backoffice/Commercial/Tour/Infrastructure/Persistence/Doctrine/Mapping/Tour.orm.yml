@@ -1,0 +1,15 @@
+ApiInmuebles\Backoffice\Commercial\Tour\Domain\Tour:
+  type: entity
+
+  id:
+    id: { type: tour_id }
+
+  fields:
+    active: { type: boolean }
+
+  manyToOne:
+    property:
+      targetEntity: ApiInmuebles\Backoffice\Commercial\Property\Domain\Property
+      joinColumn:
+        name: property_id
+        referencedColumnName: id

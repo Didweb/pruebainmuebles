@@ -1,0 +1,9 @@
+ApiInmuebles\Backoffice\Commercial\Property\Domain\Property:
+  type: entity
+
+  id:
+    id: { type: property_id }
+
+  fields:
+    title: { type: property_title }
+    description: { type: property_description, nullable: true }

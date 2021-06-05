@@ -11,27 +11,32 @@ doctrine:
         #server_version: '13'
 
         types:
-#            gener_id:
-#                class: ApiInmuebles\Backoffice\Products\Gener\Infrastructure\Persistence\Doctrine\Type\GenerIdType
-#            label_id:
-#                class: ApiInmuebles\Backoffice\Products\Label\Infrastructure\Persistence\Doctrine\Type\LabelIdType
-#            label_name:
-#                class: ApiInmuebles\Backoffice\Products\Label\Infrastructure\Persistence\Doctrine\Type\LabelNameType
+            ### Property
+            property_id:
+                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyIdType
+            property_title:
+                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyTitleType
+            property_description:
+                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyDescriptionType
+
+            ### Tour
+            tour_id:
+                class: ApiInmuebles\Backoffice\Commercial\Tour\Infrastructure\Persistence\Doctrine\Type\TourIdType
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-#            gener:
-#                mapping: true
-#                type: yml
-#                dir: '%kernel.project_dir%/src/Backoffice/Products/Gener/Infrastructure/Persistence/Doctrine/Mapping'
-#                prefix: 'ApiInmuebles\Backoffice\Products\Gener\Domain'
-#                alias: gener
-#
-#            label:
-#                mapping: true
-#                type: yml
-#                dir: '%kernel.project_dir%/src/Backoffice/Products/Label/Infrastructure/Persistence/Doctrine/Mapping'
-#                prefix: 'ApiInmuebles\Backoffice\Products\Label\Domain'
-#                alias: label
+            property:
+                mapping: true
+                type: yml
+                dir: '%kernel.project_dir%/src/Backoffice/Commercial/Property/Infrastructure/Persistence/Doctrine/Mapping'
+                prefix: 'ApiInmuebles\Backoffice\Commercial\Property\Domain'
+                alias: property
+
+            tour:
+                mapping: true
+                type: yml
+                dir: '%kernel.project_dir%/src/Backoffice/Commercial/Tour/Infrastructure/Persistence/Doctrine/Mapping'
+                prefix: 'ApiInmuebles\Backoffice\Commercial\Tour\Domain'
+                alias: tour
