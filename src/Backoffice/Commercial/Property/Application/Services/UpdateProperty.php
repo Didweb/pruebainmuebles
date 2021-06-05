@@ -6,15 +6,9 @@ namespace ApiInmuebles\Backoffice\Commercial\Property\Application\Services;
 
 
 use ApiInmuebles\Backoffice\Commercial\Property\Application\Command\UpdatePropertyCommand;
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\Exceptions\PropertyNotFoundException;
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\PropertyFinder;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\PropertyRepository;
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyDescription;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyId;
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyTitle;
-use ApiInmuebles\Shared\Domain\ValueObjects\ToursCollection;
-use ApiInmuebles\Shared\Domain\ValueObjects\Uuid;
 
 final class UpdateProperty
 {
@@ -32,7 +26,7 @@ final class UpdateProperty
 
         $property = $this->finder->__invoke(PropertyId::create($command->id()));
 
-        $property->updateProperty($command);
+        $property->updateProperty($command->_toArray());
 
         $this->repository->save($property);
     }
