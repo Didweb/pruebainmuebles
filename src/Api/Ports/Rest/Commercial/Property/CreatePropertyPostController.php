@@ -27,7 +27,7 @@ final class CreatePropertyPostController
     /**
      * Create a Property
      *
-     * @Route("/create/property", methods={"POST"}, name="api_property_create")
+     * @Route("/property/add", methods={"POST"}, name="api_property_create")
      * @OA\Tag(
      *     name="Property",
      *     description="Operations about Property"
