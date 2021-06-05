@@ -8,7 +8,6 @@ namespace ApiInmuebles\Tests\src\Backoffice\Commercial\Property\Application\Comm
 use ApiInmuebles\Backoffice\Commercial\Property\Application\Command\CreatePropertyCommand;
 use ApiInmuebles\Backoffice\Commercial\Property\Application\Command\CreatePropertyCommandHandler;
 use ApiInmuebles\Backoffice\Commercial\Property\Application\Services\CreateProperty;
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
 use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\PropertyInMemoryRepository;
 use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyDescriptionStub;
 use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyIdStub;
@@ -20,7 +19,6 @@ final class CreatePropertyCommandHandlerTest extends TestCase
     private CreateProperty $useCase;
     private CreatePropertyCommandHandler $handler;
     private $repository;
-    private Property $property;
 
     protected function setUp(): void
     {
