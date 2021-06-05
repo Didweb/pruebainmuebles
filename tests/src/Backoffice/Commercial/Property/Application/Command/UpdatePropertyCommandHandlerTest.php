@@ -43,10 +43,11 @@ final class UpdatePropertyCommandHandlerTest extends TestCase
             PropertyTitleStub::create('New Title'),
             PropertyDescriptionStub::create('New Description'),
         );
+
         $commandUpdate =  new UpdatePropertyCommand(
             (string)$this->property->id(),
-            'New Title',
-            'New Description',
+            (string)$propertyUpdate->title(),
+            (string)$propertyUpdate->description(),
         );
 
 
@@ -59,5 +60,6 @@ final class UpdatePropertyCommandHandlerTest extends TestCase
 
         /** After the change. */
         $this->assertEquals($propertyFind->title(), $propertyUpdate->title());
+        $this->assertEquals($propertyFind->id(), $propertyUpdate->id());
     }
 }

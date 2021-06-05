@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace ApiInmuebles\Backoffice\Commercial\Property\Domain;
 
-use ApiInmuebles\Backoffice\Commercial\Property\Application\Command\UpdatePropertyCommand;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyId;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyTitle;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyDescription;
 
 
-final class Property
+class Property
 {
     private PropertyId $id;
     private PropertyTitle $title;
@@ -41,9 +40,9 @@ final class Property
         return $this->description;
     }
 
-    public function updateProperty(UpdatePropertyCommand $command): void
+    public function updateProperty(array $property): void
     {
-        $this->title = new PropertyTitle($command->title());
-        $this->description = new PropertyDescription($command->description());
+        $this->title = new PropertyTitle($property['title']);
+        $this->description = new PropertyDescription($property['description']);
     }
 }

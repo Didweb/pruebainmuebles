@@ -36,4 +36,9 @@ final class Tour
         return $this->active;
     }
 
+    public function updateTour(Tour $tour): void
+    {
+        $this->property = $tour->property();
+        $this->active = $tour->active();
+    }
 }
