@@ -10,7 +10,7 @@ use ApiInmuebles\Backoffice\Commercial\Tour\Domain\Tour;
 
 final class ToursCollection extends ValueObjectCollection
 {
-    public static function create(array $valueObjects): ValueObjectCollection
+    public static function create(array $valueObjects): ToursCollection
     {
         $array = [];
         foreach ($valueObjects as $tour) {

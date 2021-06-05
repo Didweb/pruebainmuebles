@@ -30,7 +30,6 @@ final class CreateProperty
             new PropertyTitle($command->title()),
             new PropertyDescription($command->description()),
             ToursCollection::create([]),
-
         );
 
         $this->repository->save($property);
