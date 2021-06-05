@@ -33,7 +33,7 @@ final class DoctrinePropertyRepository implements PropertyRepository
 
     public function find(PropertyId $propertyId): ?Property
     {
-        return $contact = $this->repository->find($propertyId);
+        return $this->repository->find($propertyId);
 
     }
 }

@@ -28,7 +28,7 @@ final class UpdatePropertyPutController
     /**
      * Update a Property
      *
-     * @Route("/update/property", methods={"PUT"}, name="api_property_update")
+     * @Route("/property/update", methods={"PUT"}, name="api_property_update")
      * @OA\Tag(
      *     name="Property",
      *     description="Operations about Property"

@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
-namespace ApiInmuebles\Api\Ports\Rest\Commercial\Property;
+namespace ApiInmuebles\Api\Ports\Rest\Commercial\Tour;
+
 
 use ApiInmuebles\Api\Ports\Rest\ApiController;
-use ApiInmuebles\Api\Ports\Rest\Commercial\Property\Request\CreatedPropertyRequest;
-use ApiInmuebles\Backoffice\Commercial\Property\Application\Command\CreatePropertyCommand;
+use ApiInmuebles\Api\Ports\Rest\Commercial\Tour\Request\CreateTourRequest;
+use ApiInmuebles\Backoffice\Commercial\Tour\Application\Command\CreateTourCommand;
 use ApiInmuebles\Shared\Domain\Messenger\CommandBusInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use OpenApi\Annotations as OA;
 
-final class CreatePropertyPostController
+final class CreateTourPostController
 {
     private ApiController $apiController;
     private CommandBusInterface $commandBus;
@@ -27,23 +28,23 @@ final class CreatePropertyPostController
     /**
      * Create a Property
      *
-     * @Route("/property/add", methods={"POST"}, name="api_property_add")
+     * @Route("/tour/add", methods={"POST"}, name="api_tour_add")
      * @OA\Tag(
-     *     name="Property",
-     *     description="Operations about Property"
+     *     name="Tour",
+     *     description="Operations about Tour"
      * ),
      * @OA\RequestBody(
      *        required = true,
-     *        description = "Data packet for add Property",
+     *        description = "Data packet for add Tour",
      *        @OA\JsonContent(
      *             type="object",
      *             @OA\Property(
-     *                property="property",
+     *                property="tour",
      *                type="array",
      *                example={{
-     *                  "id": "b026b3f4-be48-11eb-8529-0242ac130011",
-     *                  "title": "Title Property",
-     *                  "description": "Description Property"
+     *                  "id": "0b9d1336-c60a-11eb-8529-0242ac130003",
+     *                  "property": "b026b3f4-be48-11eb-8529-0242ac130011",
+     *                  "active": "1"
      *                }},
      *                @OA\Items(
      *                      @OA\Property(
@@ -52,13 +53,13 @@ final class CreatePropertyPostController
      *                         example=""
      *                      ),
      *                      @OA\Property(
-     *                         property="title",
+     *                         property="property",
      *                         type="string",
      *                         example=""
      *                      ),
      *                      @OA\Property(
-     *                         property="description",
-     *                         type="string",
+     *                         property="active",
+     *                         type="bool",
      *                         example=""
      *                      ),
      *                ),
@@ -67,17 +68,17 @@ final class CreatePropertyPostController
      * ),
      * @OA\Response(
      *        response="201",
-     *        description="Success: Property created",
+     *        description="Success: Tour created",
      *     )
      **/
     public function __invoke(Request $request): Response
     {
-        $request = CreatedPropertyRequest::fromContent($this->apiController->getContent($request));
+        $request = CreateTourRequest::fromContent($this->apiController->getContent($request));
 
-        $createPropertyCommand = new CreatePropertyCommand (
+        $createPropertyCommand = new CreateTourCommand (
             $request->id(),
-            $request->title(),
-            $request->description()
+            $request->property(),
+            $request->active()
         );
 
         $this->commandBus->dispatch($createPropertyCommand);
