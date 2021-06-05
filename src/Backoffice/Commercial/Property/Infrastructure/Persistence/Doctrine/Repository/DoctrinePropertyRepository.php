@@ -30,14 +30,10 @@ final class DoctrinePropertyRepository implements PropertyRepository
         $this->em->persist($property);
     }
 
-    public function update(Property $property): void
-    {
-        // TODO: Implement update() method.
-    }
 
     public function find(PropertyId $propertyId): ?Property
     {
-        // TODO: Implement find() method.
-        return null;
+        return $contact = $this->repository->find($propertyId);
+
     }
 }

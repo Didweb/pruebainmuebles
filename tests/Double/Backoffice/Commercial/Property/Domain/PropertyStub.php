@@ -17,29 +17,26 @@ use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\ValueObjects
 
 final class PropertyStub
 {
-    public static function random(int $items): Property
+    public static function random(): Property
     {
         $propertyId = PropertyIdStub::random();
         return new Property(
             $propertyId,
             PropertyTitleStub::random(),
-            PropertyDescriptionStub::random(),
-            ToursCollectionStub::random($items, $propertyId),
+            PropertyDescriptionStub::random()
         );
     }
 
     public static function create(
         PropertyId $propertyId,
         PropertyTitle $title,
-        PropertyDescription $description,
-        ToursCollection $tours
+        PropertyDescription $description
     ): Property
     {
         return new Property(
             $propertyId,
             $title,
-            $description,
-            $tours,
+            $description
         );
     }
 }

@@ -18,8 +18,6 @@ doctrine:
                 class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyTitleType
             property_description:
                 class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyDescriptionType
-            property_tours_collection:
-                class: ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence\Doctrine\Type\PropertyToursCollectionType
 
             ### Tour
             tour_id:

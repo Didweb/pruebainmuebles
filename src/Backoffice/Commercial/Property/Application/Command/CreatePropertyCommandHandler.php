@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiInmuebles\Backoffice\Commercial\Property\Application\Command;
 
 
-use ApiInmuebles\Backoffice\Commercial\Property\Application\CreateProperty;
+use ApiInmuebles\Backoffice\Commercial\Property\Application\Services\CreateProperty;
 
 final class CreatePropertyCommandHandler
 {

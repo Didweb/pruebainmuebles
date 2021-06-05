@@ -7,7 +7,7 @@ namespace ApiInmuebles\Tests\src\Backoffice\Commercial\Property\Application\Comm
 
 use ApiInmuebles\Backoffice\Commercial\Property\Application\Command\CreatePropertyCommand;
 use ApiInmuebles\Backoffice\Commercial\Property\Application\Command\CreatePropertyCommandHandler;
-use ApiInmuebles\Backoffice\Commercial\Property\Application\CreateProperty;
+use ApiInmuebles\Backoffice\Commercial\Property\Application\Services\CreateProperty;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
 use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\PropertyInMemoryRepository;
 use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyDescriptionStub;
@@ -41,6 +41,7 @@ final class CreatePropertyCommandHandlerTest extends TestCase
 
         $this->handler->__invoke($command);
         $itemInMemory = $this->repository->find(PropertyIdStub::create($command->id()));
+
         $this->assertEquals($command->id(), $itemInMemory->id());
     }
 

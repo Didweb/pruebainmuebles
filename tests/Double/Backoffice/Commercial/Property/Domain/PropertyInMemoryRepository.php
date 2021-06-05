@@ -40,13 +40,6 @@ final class PropertyInMemoryRepository
             }
 
 
-
-            public function update(Property $property): void
-            {
-                // TODO: Implement update() method.
-            }
-
-
             public function find(PropertyId $propertyId): ?Property
             {
                 $filter = $this->arrayCollection->filter(

@@ -7,4 +7,3 @@ ApiInmuebles\Backoffice\Commercial\Property\Domain\Property:
   fields:
     title: { type: property_title }
     description: { type: property_description, nullable: true }
-    tours: {type: json_array, nullable: true }
