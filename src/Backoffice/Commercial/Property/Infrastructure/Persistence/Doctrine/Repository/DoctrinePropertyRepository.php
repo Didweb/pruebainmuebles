@@ -7,6 +7,7 @@ namespace ApiInmuebles\Backoffice\Commercial\Property\Infrastructure\Persistence
 
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\PropertyRepository;
+use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyId;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyTitle;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
@@ -34,4 +35,9 @@ final class DoctrinePropertyRepository implements PropertyRepository
         // TODO: Implement update() method.
     }
 
+    public function find(PropertyId $propertyId): ?Property
+    {
+        // TODO: Implement find() method.
+        return null;
+    }
 }

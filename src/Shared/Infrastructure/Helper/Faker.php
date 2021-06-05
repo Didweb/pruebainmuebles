@@ -20,4 +20,14 @@ final class Faker
     {
         return Factory::create(self::LANG)->uuid;
     }
+
+    public static function text(): string
+    {
+        return Factory::create(self::LANG)->text;
+    }
+
+    public static function bool(): bool
+    {
+        return Factory::create(self::LANG)->boolean;
+    }
 }

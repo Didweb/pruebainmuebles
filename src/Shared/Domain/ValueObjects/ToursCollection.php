@@ -10,10 +10,10 @@ use ApiInmuebles\Backoffice\Commercial\Tour\Domain\Tour;
 
 final class ToursCollection extends ValueObjectCollection
 {
-    public static function create(array $tours): self
+    public static function create(array $valueObjects): ValueObjectCollection
     {
         $array = [];
-        foreach ($tours as $tour) {
+        foreach ($valueObjects as $tour) {
             $array[] = new Tour($tour->id(), $tour->active(), $tour->property());
         }
 
