@@ -43,10 +43,10 @@ final class CreateTourCommandHandlerTest extends TestCase
             (string)PropertyTitleStub::random(),
             (string)PropertyDescriptionStub::random()
         );
+
         $useCaseProperty = new CreateProperty($this->propertyRepository);
         $handlerProperty = new CreatePropertyCommandHandler($useCaseProperty);
         $handlerProperty->__invoke($this->propertyCommand);
-
 
         parent::setUp();
     }
@@ -82,6 +82,5 @@ final class CreateTourCommandHandlerTest extends TestCase
         );
 
         $this->handler->__invoke($command);
-
     }
 }
