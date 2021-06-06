@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiInmuebles\Tests\Double\Backoffice\Commercial\Tour\Domain;
 
 
+use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
 use ApiInmuebles\Backoffice\Commercial\Tour\Domain\Tour;
 use ApiInmuebles\Backoffice\Commercial\Tour\Domain\TourRepository;
 use ApiInmuebles\Backoffice\Commercial\Tour\Domain\ValueObjects\TourId;
@@ -37,6 +38,7 @@ final class TourInMemoryRepository
                 } else {
                     $this->arrayCollection->add($tour);
                 }
+
             }
 
 
@@ -49,6 +51,27 @@ final class TourInMemoryRepository
                 );
 
                 return $filter->count() ? $filter->first() : null;
+            }
+
+            public function findByProperty(Property $property): array
+            {
+               $result = [];
+//                $filter = $this->arrayCollection->filter(
+//                    function (Tour $tour) use ($property) {
+//                        if((string)$tour->property()->id() == (string)$property->id()){
+//                            $result[] = $tour;
+//                        }
+//                    }
+//                );
+
+                foreach($this->arrayCollection as $items) {
+                    if($items->property()->id() == $property->id()) {
+                        $result[] = $items;
+                    }
+                }
+                return $result;
+
+
             }
         }
         );

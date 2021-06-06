@@ -81,6 +81,7 @@ final class CreateTourPostController
             $request->active()
         );
 
+
         $this->commandBus->dispatch($createPropertyCommand);
 
         return $this->apiController->makeResponse($createPropertyCommand->_toArray(), Response::HTTP_CREATED);
