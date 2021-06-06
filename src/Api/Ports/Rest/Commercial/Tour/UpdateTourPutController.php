@@ -73,7 +73,7 @@ final class UpdateTourPutController
      **/
     public function __invoke(Request $request): Response
     {
-        $request = UpdateTourRequest::fromCOntent($this->apiController->getContent($request));
+        $request = UpdateTourRequest::fromContent($this->apiController->getContent($request));
 
         $updateTourCommand = new UpdateTourCommand(
             $request->id(),

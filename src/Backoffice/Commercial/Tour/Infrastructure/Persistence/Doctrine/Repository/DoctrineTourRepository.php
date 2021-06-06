@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiInmuebles\Backoffice\Commercial\Tour\Infrastructure\Persistence\Doctrine\Repository;
 
 
+use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
 use ApiInmuebles\Backoffice\Commercial\Tour\Domain\Tour;
 use ApiInmuebles\Backoffice\Commercial\Tour\Domain\TourRepository;
 use ApiInmuebles\Backoffice\Commercial\Tour\Domain\ValueObjects\TourId;
@@ -23,6 +24,7 @@ final class DoctrineTourRepository implements TourRepository
         $repository = $this->em->getRepository(Tour::class);
         $this->repository = $repository;
     }
+
     public function save(Tour $tour): void
     {
         $this->em->persist($tour);
@@ -31,7 +33,11 @@ final class DoctrineTourRepository implements TourRepository
 
     public function find(TourId $tourId): ?Tour
     {
-        return  $this->repository->find($tourId);
+        return $this->repository->find($tourId);
+    }
 
+    public function findByProperty(Property $property): array
+    {
+        return $this->repository->findBy(['property' => $property]);
     }
 }
