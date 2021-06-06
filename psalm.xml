@@ -13,7 +13,6 @@
             <file name="src/Kernel.php" />
         </ignoreFiles>
     </projectFiles>
-
     <issueHandlers>
         <!-- Level 8 ignores -->
         <LessSpecificReturnType errorLevel="info"/>
