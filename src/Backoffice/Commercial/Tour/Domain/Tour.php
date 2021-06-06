@@ -41,4 +41,14 @@ final class Tour
         $this->property = $tour->property();
         $this->active = $tour->active();
     }
+
+    public function _toArray(): array
+    {
+        $tour = [
+            'id' => (string)$this->id(),
+            'property' => (string)$this->property()->id(),
+            'active' => (string)$this->active(),
+            ];
+        return $tour;
+    }
 }

@@ -14,8 +14,6 @@ final class ApiController
 {
 
 
-
-
     public function getContent(Request $request ): array
     {
 
@@ -43,17 +41,4 @@ final class ApiController
         );
     }
 
-    /**
-     * @psalm-suppress MissingParamType
-     * @phpstan-ignore-next-line
-     */
-    public function makeObjectResponse($response, int $httpCode = Response::HTTP_OK, array $serializationGroups = []): JsonResponse
-    {
-        return new JsonResponse(
-            $response,
-            $httpCode,
-            [],
-            true
-        );
-    }
 }

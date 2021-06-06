@@ -45,4 +45,5 @@ class Property
         $this->title = new PropertyTitle($property['title']);
         $this->description = new PropertyDescription($property['description']);
     }
+
 }

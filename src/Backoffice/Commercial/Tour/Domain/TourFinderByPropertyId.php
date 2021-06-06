@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace ApiInmuebles\Backoffice\Commercial\Tour\Domain;
 
 
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\Exceptions\PropertyNotFoundException;
+use ApiInmuebles\Backoffice\Commercial\Property\Domain\Exceptions\PropertyNotFoundInListToursException;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyId;
-use ApiInmuebles\Backoffice\Commercial\Tour\Domain\Exceptions\TourNotFoundException;
 
 final class TourFinderByPropertyId
 {
@@ -18,13 +16,15 @@ final class TourFinderByPropertyId
     {
         $this->repository = $repository;
     }
-    public function __invoke(Property $property): ?array
+    public function __invoke(?Property $property): ?array
     {
+
+        if (null === $property) {
+            throw PropertyNotFoundInListToursException::ofId();
+        }
+
         $tours = $this->repository->findByProperty($property);
 
-        if (null === $tours) {
-            throw PropertyNotFoundException::ofId($property->id());
-        }
 
         return $tours;
     }

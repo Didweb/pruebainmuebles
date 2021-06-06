@@ -6,10 +6,9 @@ namespace ApiInmuebles\Api\Ports\Rest\Commercial\Tour;
 
 
 use ApiInmuebles\Api\Ports\Rest\ApiController;
-use ApiInmuebles\Api\Ports\Rest\Commercial\Tour\Request\ListToursByPropertyRequest;
-use ApiInmuebles\Backoffice\Commercial\Tour\Application\Query\ListToursByPropertyQuery;
+use ApiInmuebles\Backoffice\Commercial\Tour\Application\Services\ListAllToursByProperty;
+use ApiInmuebles\Backoffice\Commercial\Tour\Domain\ToursByPropertyResponse;
 use ApiInmuebles\Shared\Domain\Messenger\QueryBusInterface;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use OpenApi\Annotations as OA;
@@ -18,11 +17,16 @@ final class ListToursByPropertyGetController
 {
     private ApiController $apiController;
     private QueryBusInterface $queryBus;
+    private ListAllToursByProperty $useCase;
 
-    public function __construct(ApiController $apiController, QueryBusInterface $queryBus)
+    public function __construct(
+        ApiController $apiController,
+        QueryBusInterface $queryBus,
+        ListAllToursByProperty $useCase)
     {
         $this->apiController = $apiController;
         $this->queryBus = $queryBus;
+        $this->useCase = $useCase;
     }
     /**
      * Update a Property
@@ -39,10 +43,8 @@ final class ListToursByPropertyGetController
      **/
     public function __invoke(string $propertyId): Response
     {
+        $listToursByProperty =  $this->useCase->__invoke(new ToursByPropertyResponse ($propertyId));
 
-       $listToursByProperty = $this->queryBus->dispatch(new ListToursByPropertyQuery($propertyId));
-
-        return $this->apiController->makeResponse([]);
-
+        return $this->apiController->makeResponse($listToursByProperty->_toArray());
     }
 }
