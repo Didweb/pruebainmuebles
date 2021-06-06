@@ -7,11 +7,7 @@ namespace ApiInmuebles\Tests\src\Backoffice\Commercial\Tour\Application\Services
 
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\PropertyFinder;
-use ApiInmuebles\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyId;
-use ApiInmuebles\Backoffice\Commercial\Tour\Application\Command\UpdateTourCommand;
-use ApiInmuebles\Backoffice\Commercial\Tour\Application\Command\UpdateTourCommandHandler;
 use ApiInmuebles\Backoffice\Commercial\Tour\Application\Services\ListAllToursByProperty;
-use ApiInmuebles\Backoffice\Commercial\Tour\Application\Services\UpdateTour;
 use ApiInmuebles\Backoffice\Commercial\Tour\Domain\Tour;
 use ApiInmuebles\Backoffice\Commercial\Tour\Domain\TourFinderByPropertyId;
 use ApiInmuebles\Backoffice\Commercial\Tour\Domain\ToursByPropertyResponse;

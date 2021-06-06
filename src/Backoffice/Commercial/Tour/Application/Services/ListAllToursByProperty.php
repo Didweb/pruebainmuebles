@@ -23,7 +23,7 @@ final class ListAllToursByProperty
         $this->propertyFinder = $propertyFinder;
     }
 
-    public function __invoke(ToursByPropertyResponse $response): ?ToursByPropertyResponse
+    public function __invoke(ToursByPropertyResponse $response): ToursByPropertyResponse
     {
         $property = $this->propertyFinder->__invoke(PropertyId::create($response->propertyId()));
 

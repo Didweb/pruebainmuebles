@@ -21,7 +21,7 @@ final class QueryBus implements QueryBusInterface
     }
 
 
-    public function dispatch(Query $query)
+    public function dispatch(Query $query): HandledStamp
     {
         try {
             $response = $this->messageBus->dispatch($query);
