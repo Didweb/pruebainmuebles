@@ -62,9 +62,8 @@ final class ListAllToursByPropertyTest extends TestCase
     public function test_should_list_tours_by_property_when_exist(): void
     {
 
-        $response = new ToursByPropertyResponse((string)$this->property->id());
 
-        $responseList = $this->useCase->__invoke($response);
+        $responseList = $this->useCase->__invoke((string)$this->property->id());
 
         $this->assertEquals($responseList->propertyId(), $this->property->id());
         $this->assertEquals($responseList->tours()[0]['id'], $this->tourFirstItem->id());
@@ -75,9 +74,7 @@ final class ListAllToursByPropertyTest extends TestCase
     {
         $this->expectException(PropertyNotFoundException::class);
 
-        $response = new ToursByPropertyResponse((string)PropertyIdStub::random());
-
-        $this->useCase->__invoke($response);
+        $this->useCase->__invoke((string)PropertyIdStub::random());
 
     }
 

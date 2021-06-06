@@ -23,17 +23,14 @@ final class ListAllToursByProperty
         $this->propertyFinder = $propertyFinder;
     }
 
-    public function __invoke(ToursByPropertyResponse $response): ToursByPropertyResponse
+    public function __invoke(string  $propertyId): ToursByPropertyResponse
     {
+        $response = new ToursByPropertyResponse ($propertyId);
+
         $property = $this->propertyFinder->__invoke(PropertyId::create($response->propertyId()));
 
         $response->updateTours($this->tourFinder->__invoke($property));
 
-        $toursResponse = new ToursByPropertyResponse(
-            (string)$property->id(),
-            $response->tours()
-        );
-
-        return $toursResponse;
+        return $response;
     }
 }
