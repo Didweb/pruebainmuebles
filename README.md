@@ -41,17 +41,17 @@ He englobado los módulos **Property** y **Tour** dentro de  **Commercial**.
 ---
 #### Relaciones:
 
-En las relaciones he optado por solamente vincular el lado de **Tour** dejando libre el modelo **Property**, 
-siguiendo las recomendaciones para aplicaciones de alta concurrencia evitando así el arrastrar las relaciones cada vez 
-que se llama a **Property**. 
+En las relaciones he optado por solamente vincular el lado de **Tour** dejando libre el modelo **Property**,
+siguiendo las recomendaciones para aplicaciones de alta concurrencia evitando así el arrastrar las relaciones cada vez
+que se llama a **Property**.
 
-Este supuesto puede cambiara dependiedo de las estartegías que se decidan llevar a cabo. Por ejemplo en el caso de querer hacer 
+Este supuesto puede cambiara dependido de las estrategias que se decidan llevar a cabo. Por ejemplo en el caso de querer hacer
 una relación entre entidades hubiera puesto en **Property** una colección objetos **Tour**.
 
 He creado un endpoint  `api/tour/list/{propertyId}` extra para conseguir el listado de Tours por Property.
 
-Esta estructura  podría  ser consumida por una aplicación creada con Angular: Donde tenienodo
-la ficha **Property** se puede hacer una segunda llamada asincrona 
+Esta estructura  podría  ser consumida por una aplicación creada con Angular: Donde teniendo
+la ficha **Property** se puede hacer una segunda llamada asíncrona
 para traer el listado de `Tours` asociados mediante el endpoint `api/tour/list/{propertyId}`
 
 ---
