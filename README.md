@@ -22,6 +22,7 @@
 
 - Symfony 5
 - PHP 7.4
+- Docker / Docker-Compose  
 - Path doc api: `http://localhost:8080/api/doc`
 
 Documentación API mediante: **Nelmio**
