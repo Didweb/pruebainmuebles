@@ -60,14 +60,15 @@ para traer el listado de `Tours` asociados mediante el endpoint `api/tour/list/{
 
 #### Phpunit
 Run Phpunit: `./vendor/bin/phpunit`
+![Tests in Green](./docs/tests_phpunit.png)
 
-![Tests in Green](./docs/psalm.png)
 
 ---
 
 #### Psalm
 Run Psalm: `./vendor/bin/psalm`
-![Tests in Green](./docs/tests_phpunit.png)
+![Tests in Green](./docs/psalm.png)
+
 
 
 
