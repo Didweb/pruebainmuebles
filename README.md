@@ -31,7 +31,7 @@ Documentación API mediante: **Nelmio**
 
 #### Endpoints
 
-![Tests in Green](./docs/nelmio.png)
+![Tests in Green](./docs/nelmio_image.png)
 
 He optado por una arquitectura DDD. He usado CQRS en los comandos. Hay una Query sin usar CQRS, me dio problemas al cargar el Handler, por lo que lo hice sin CQRS.
 
