@@ -8,10 +8,12 @@ namespace ApiInmuebles\Tests\src\Backoffice\Commercial\Property\Application\Comm
 use ApiInmuebles\Backoffice\Commercial\Property\Application\Command\UpdatePropertyCommand;
 use ApiInmuebles\Backoffice\Commercial\Property\Application\Command\UpdatePropertyCommandHandler;
 use ApiInmuebles\Backoffice\Commercial\Property\Application\Services\UpdateProperty;
+use ApiInmuebles\Backoffice\Commercial\Property\Domain\Exceptions\PropertyNotFoundException;
 use ApiInmuebles\Backoffice\Commercial\Property\Domain\Property;
 use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\PropertyInMemoryRepository;
 use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\PropertyStub;
 use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyDescriptionStub;
+use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyIdStub;
 use ApiInmuebles\Tests\Double\Backoffice\Commercial\Property\Domain\ValueObjects\PropertyTitleStub;
 use PHPUnit\Framework\TestCase;
 
@@ -61,5 +63,19 @@ final class UpdatePropertyCommandHandlerTest extends TestCase
         /** After the change. */
         $this->assertEquals($propertyFind->title(), $propertyUpdate->title());
         $this->assertEquals($propertyFind->id(), $propertyUpdate->id());
+    }
+
+    public function test_should_update_property_when_not_exist(): void
+    {
+        $this->expectException(PropertyNotFoundException::class);
+
+        $commandUpdate =  new UpdatePropertyCommand(
+            (string)PropertyIdStub::random(),
+            (string)PropertyTitleStub::random(),
+            (string)PropertyTitleStub::random(),
+        );
+
+        $this->useCase->__invoke($commandUpdate);
+
     }
 }
