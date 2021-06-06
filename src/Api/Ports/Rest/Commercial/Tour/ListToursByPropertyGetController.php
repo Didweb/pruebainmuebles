@@ -43,7 +43,7 @@ final class ListToursByPropertyGetController
      **/
     public function __invoke(string $propertyId): Response
     {
-        $listToursByProperty =  $this->useCase->__invoke(new ToursByPropertyResponse ($propertyId));
+        $listToursByProperty =  $this->useCase->__invoke($propertyId);
 
         return $this->apiController->makeResponse($listToursByProperty->_toArray());
     }
