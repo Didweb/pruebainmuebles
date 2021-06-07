@@ -31,9 +31,10 @@ Documentación API mediante: **Nelmio**
 
 #### Endpoints
 
-![Tests in Green](./docs/nelmio_image.png)
+![Tests in Green](./docs/nelmio_2.png)
 
-He optado por una arquitectura DDD. He usado CQRS en los comandos. Hay una Query sin usar CQRS, me dio problemas al cargar el Handler, por lo que lo hice sin CQRS.
+He optado por una arquitectura DDD. He usado CQRS en los comandos. Hay una Query sin usar CQRS, me dio problemas al 
+cargar el Handler, por lo que lo hice sin CQRS.
 
 #### Contexto:
 
@@ -49,11 +50,11 @@ que se llama a **Property**.
 Este supuesto puede cambiara dependido de las estrategias que se decidan llevar a cabo. Por ejemplo en el caso de querer hacer
 una relación entre entidades hubiera puesto en **Property** una colección objetos **Tour**.
 
-He creado un endpoint  `api/tour/list/{propertyId}` extra para conseguir el listado de Tours por Property.
+He creado un endpoint  `api/tours/list/{propertyId}` extra para conseguir el listado de Tours por Property.
 
 Esta estructura  podría  ser consumida por una aplicación creada con Angular: Donde teniendo
 la ficha **Property** se puede hacer una segunda llamada asíncrona
-para traer el listado de `Tours` asociados mediante el endpoint `api/tour/list/{propertyId}`
+para traer el listado de `Tours` asociados mediante el endpoint `api/tours/list/{propertyId}`
 
 ---
 

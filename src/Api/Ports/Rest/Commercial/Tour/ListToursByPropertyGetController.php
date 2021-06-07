@@ -29,9 +29,9 @@ final class ListToursByPropertyGetController
         $this->useCase = $useCase;
     }
     /**
-     * Update a Property
+     * List Tours by PropertyId
      *
-     * @Route("/tour/list/{propertyId}", methods={"GET"}, name="api_tour_list_by_property")
+     * @Route("/tours/list/{propertyId}", methods={"GET"}, name="api_tour_list_by_property")
      * @OA\Tag(
      *     name="Tour",
      *     description="Operations about Tour"
